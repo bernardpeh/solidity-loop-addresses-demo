@@ -35,7 +35,7 @@ contract Test {
             if (deletedUser.index != addressIndexes.length-1) {
                 // delete indexed data
                 delete arrayStructs[msg.sender];
-                delete addressIndexes[deletedUser.index];
+                // delete addressIndexes[deletedUser.index];
                 // last strucUser
                 address lastAddress = addressIndexes[addressIndexes.length-1];
                 addressIndexes[deletedUser.index] = lastAddress;
