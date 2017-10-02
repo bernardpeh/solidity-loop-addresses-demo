@@ -33,20 +33,14 @@ contract Test {
             structUser memory deletedUser = arrayStructs[msg.sender];
             // if index is not the last entry
             if (deletedUser.index != addressIndexes.length-1) {
-                // delete indexed data
-                delete arrayStructs[msg.sender];
                 // delete addressIndexes[deletedUser.index];
                 // last strucUser
                 address lastAddress = addressIndexes[addressIndexes.length-1];
                 addressIndexes[deletedUser.index] = lastAddress;
                 arrayStructs[lastAddress].index = deletedUser.index; 
-                addressIndexes.length--;
             }
-            // if index is last entry
-            else {
-               delete arrayStructs[msg.sender];
-               addressIndexes.length--;
-            }
+            delete arrayStructs[msg.sender];
+            addressIndexes.length--;
             return true;
         }
     }
